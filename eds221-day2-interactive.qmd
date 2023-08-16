@@ -1,5 +1,5 @@
 ---
-title: "eds221-day2-interactive"
+title: "eds221-day2-interactive - (actually day3)"
 author: "Kat Le"
 execute:
     warning: FALSE
@@ -91,5 +91,32 @@ mean_mtcars <- vector(mode = "numeric", length = ncol(mtcars))
 for (i in seq_along(mtcars)) {
   mean_val <- mean(mtcars[[i]], na.rm = TRUE)
   mean_mtcars[i] <- mean_val
+}
+```
+
+# Conditional practice
+
+Write a for loop with a conditional (if) statement that returns the means of all NUMERIC variables in the penguins dataset.
+
+-   is.numeric
+
+```{r}
+library(palmerpenguins)
+
+mean_penguins <- vector(mode = "numeric", length = ncol(penguins))
+
+for (i in seq_along(penguins)) {
+  if (is.numeric(penguins[[i]])) {
+  mean_value <- mean(mean_penguins[[i]], na.rm = TRUE)
+  mean_penguins[i] <- mean_value
+  }
+}
+
+## allison's answer. your answer above would be wrong because not every column will be a numeric class - you need to skip over other classes.
+for (i in seq_along(penguins)) {
+  if (is.numeric(penguins[[i]])) {
+    penguins_mean <- mean(penguins[[i]], na.rm = TRUE)
+    print(penguins_mean)
+  }
 }
 ```
