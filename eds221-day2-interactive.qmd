@@ -83,3 +83,13 @@ for (i in seq_along(height)) {
   print(new_height)
 }
 ```
+
+```{r}
+# class activity
+mean_mtcars <- vector(mode = "numeric", length = ncol(mtcars))
+
+for (i in seq_along(mtcars)) {
+  mean_val <- mean(mtcars[[i]], na.rm = TRUE)
+  mean_mtcars[i] <- mean_val
+}
+```
